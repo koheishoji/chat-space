@@ -1,13 +1,10 @@
 # DATABASE DESIGNS
 
-** u_g_id = user_groups_id **
-
 ## users
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
 | name       | string      |              |
 | email      | string      | unique       |
-| u_g_id     | integer     |              |
 
 ### ASSOCIATION
 - has_many :messages
@@ -17,7 +14,6 @@
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
 | thread     | string      |              |
-| u_g_id     | integer     |              |
 
 ### ASSOCIATION
 - has_many :user_groups
