@@ -6,7 +6,7 @@
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
 | name       | string      |              |
-| email      | string      |              |
+| email      | string      | unique       |
 | u_g_id     | integer     |              |
 
 ### ASSOCIATION
