@@ -16,6 +16,7 @@
 | thread     | string      |              |
 
 ### ASSOCIATION
+- has_many :messages
 - has_many :user_groups
 
 ## messages
