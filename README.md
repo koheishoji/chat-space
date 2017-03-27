@@ -1,24 +1,58 @@
-# README
+# DATABASE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DATABASE DESIGNS
 
-Things you may want to cover:
+### users
+| column     | type        | default      |
+|:----------:|:-----------:|:------------:|
+| id         | integer     | auto         |
+| name       | char        |              |
+| email      | char        |              |
+| u_g_id     | integer     |              |
 
-* Ruby version
+### groups
+| column     | type        | default      |
+|:----------:|:-----------:|:------------:|
+| id         | integer     | auto         |
+| thread     | char        |              |
+| u_g_id     | integer     |              |
 
-* System dependencies
+### messages
+| column     | type        | default      |
+|:----------:|:-----------:|:------------:|
+| id         | integer     | auto         |
+| body       | text        |              |
+| image      | string      | null         |
+| user_id    | integer     |              |
+| group_id   | integer     |              |
 
-* Configuration
+### user_groups
+| column     | type        | default      |
+|:----------:|:-----------:|:------------:|
+| id         | integer     | auto         |
+| user_id    | integer     |              |
+| groups_id  | integer     |              |
 
-* Database creation
+** u_g_id = user_groups_id **
 
-* Database initialization
+## ASSOCIATION
+'''
+class User
+  has_many :messages
+  has_many :user_groups
+end
 
-* How to run the test suite
+class Group
+  has_many :user_groups
+end
 
-* Services (job queues, cache servers, search engines, etc.)
+class Message
+  belongs_to :user
+  belongs_to :group
+end
 
-* Deployment instructions
-
-* ...
+class User_groups
+  belongs_to :user
+  belongs_to :group
+end
+'''
