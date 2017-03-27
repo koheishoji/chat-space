@@ -5,7 +5,6 @@
 ## users
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
-| id         | integer     | auto         |
 | name       | char        |              |
 | email      | char        |              |
 | u_g_id     | integer     |              |
@@ -17,7 +16,6 @@
 ## groups
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
-| id         | integer     | auto         |
 | thread     | char        |              |
 | u_g_id     | integer     |              |
 
@@ -27,7 +25,6 @@
 ## messages
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
-| id         | integer     | auto         |
 | body       | text        |              |
 | image      | string      | null         |
 | user_id    | integer     |              |
@@ -40,7 +37,6 @@
 ## user_groups
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
-| id         | integer     | auto         |
 | user_id    | integer     |              |
 | groups_id  | integer     |              |
 
