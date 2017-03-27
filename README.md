@@ -5,8 +5,8 @@
 ## users
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
-| name       | char        |              |
-| email      | char        |              |
+| name       | string      |              |
+| email      | string      |              |
 | u_g_id     | integer     |              |
 
 ### ASSOCIATION
@@ -16,7 +16,7 @@
 ## groups
 | column     | type        | default      |
 |:----------:|:-----------:|:------------:|
-| thread     | char        |              |
+| thread     | string      |              |
 | u_g_id     | integer     |              |
 
 ### ASSOCIATION
