@@ -23,7 +23,7 @@
 | column     | type        | option           |
 |:----------:|:-----------:|:----------------:|
 | body       | text        |                  |
-| image      | string      | null:true        |
+| image      | string      |                  |
 | user_id    | integer     | foreign_key:true |
 | group_id   | integer     | foreign_key:true |
 
