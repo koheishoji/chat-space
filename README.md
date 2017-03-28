@@ -3,8 +3,8 @@
 ## users
 | column     | type        | option       |
 |:----------:|:-----------:|:------------:|
-| name       | string      | index        |
-| email      | string      | unique       |
+| name       | string      | index:true   |
+| email      | string      | unique:true  |
 
 ### ASSOCIATION
 - has_many :messages
