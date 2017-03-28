@@ -24,8 +24,8 @@
 |:----------:|:-----------:|:------------:|
 | body       | text        |              |
 | image      | string      | null:true    |
-| user_id    | integer     |              |
-| group_id   | integer     |              |
+| user_id    | integer     | foreign key  |
+| group_id   | integer     | foreign key  |
 
 ### ASSOCIATION
 - belongs_to :user
@@ -34,8 +34,8 @@
 ## user_groups
 | column     | type        | option       |
 |:----------:|:-----------:|:------------:|
-| user_id    | integer     |              |
-| groups_id  | integer     |              |
+| user_id    | integer     | foreign key  |
+| groups_id  | integer     | foreign key  |
 
 ### ASSOCIATION
 - belongs_to :user
