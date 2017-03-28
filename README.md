@@ -8,7 +8,7 @@
 
 ### ASSOCIATION
 - has_many :messages
-- has_many :user_groups
+- has_many :messages, through: :user_groups
 
 ## groups
 | column     | type        | option       |
@@ -17,7 +17,7 @@
 
 ### ASSOCIATION
 - has_many :messages
-- has_many :user_groups
+- has_many :users, through: :user_groups
 
 ## messages
 | column     | type        | option       |
