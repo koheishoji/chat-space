@@ -3,7 +3,7 @@
 ## users
 | column     | type        | option       |
 |:----------:|:-----------:|:------------:|
-| name       | string      |              |
+| name       | string      | index        |
 | email      | string      | unique       |
 
 ### ASSOCIATION
