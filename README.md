@@ -1,7 +1,7 @@
 # DATABASE DESIGNS
 
 ## users
-| column     | type        | default      |
+| column     | type        | option       |
 |:----------:|:-----------:|:------------:|
 | name       | string      |              |
 | email      | string      | unique       |
@@ -11,7 +11,7 @@
 - has_many :user_groups
 
 ## groups
-| column     | type        | default      |
+| column     | type        | option       |
 |:----------:|:-----------:|:------------:|
 | thread     | string      |              |
 
@@ -20,10 +20,10 @@
 - has_many :user_groups
 
 ## messages
-| column     | type        | default      |
+| column     | type        | option       |
 |:----------:|:-----------:|:------------:|
 | body       | text        |              |
-| image      | string      | null         |
+| image      | string      | null:true    |
 | user_id    | integer     |              |
 | group_id   | integer     |              |
 
@@ -32,7 +32,7 @@
 - belongs_to :group
 
 ## user_groups
-| column     | type        | default      |
+| column     | type        | option       |
 |:----------:|:-----------:|:------------:|
 | user_id    | integer     |              |
 | groups_id  | integer     |              |
