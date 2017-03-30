@@ -16,7 +16,7 @@
 
 ## groups_users
 - belongs_to :user
-- belongs_to :groups
+- belongs_to :group
 
 # DATABASE DESIGNS
 
@@ -29,12 +29,12 @@
 ## groups
 | column     | type        | option           |
 |:----------:|:-----------:|:----------------:|
-| thread     | string      |                  |
+| name       | string      |                  |
 
 ## messages
 | column     | type        | option           |
 |:----------:|:-----------:|:----------------:|
-| body       | text        |                  |
+| body       | text        | null:false       |
 | image      | string      |                  |
 | user_id    | integer     | foreign_key:true |
 | group_id   | integer     | foreign_key:true |
