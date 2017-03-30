@@ -2,19 +2,19 @@
 
 ## users
 - has_many :messages
-- has_many :groups, through: :user_groups
-- has_many :user_groups
+- has_many :groups, through: :groups_users
+- has_many :groups_users
 
 ## groups
 - has_many :messages
-- has_many :users, through: :user_groups
-- has_many :user_groups
+- has_many :users, through: :groups_users
+- has_many :groups_users
 
 ## messages
 - belongs_to :user
 - belongs_to :group
 
-## user_groups
+## groups_users
 - belongs_to :user
 - belongs_to :groups
 
@@ -39,7 +39,7 @@
 | user_id    | integer     | foreign_key:true |
 | group_id   | integer     | foreign_key:true |
 
-## user_groups
+## groups_users
 | column     | type        | option           |
 |:----------:|:-----------:|:----------------:|
 | user_id    | integer     | foreign_key:true |
