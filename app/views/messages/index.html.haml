@@ -1,0 +1,27 @@
+%div.notification
+  %p<
+    = @notification
+
+%div.left
+  %div.left__user
+    %p<
+      = @user[:name]
+  %div.left__groups
+    - @groups.each do |group|
+      = render partial: "groups", locals: { group: group }
+
+%div.right
+  %div.right__group
+    %p<
+      = @group[:name]
+    %ul
+      - @group[:menbers].each do |member|
+        %li<
+          = member
+  %div.right__log
+    - @messages.each do |message|
+      = render partial: "messages", locals: { message: message }
+  %div.right__form
+    = form_for(@chat) do |f|
+      = f.text_field :body
+      = f.submit

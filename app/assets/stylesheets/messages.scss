@@ -1,3 +1,37 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.notification {
+  width: 100vw;
+  height: 30px;
+  background-color: #38AEF0;
+  text-align: center;
+  color: white;
+  position: fixed;
+}
+
+.left {
+  float: left;
+  background-color: #2F3E51;
+  width: 300px;
+  height: calc(100vh - 30px);
+  padding-top: 30px;
+  color: #FFFFFF;
+
+  &__user {
+    background-color: #253141;
+    padding: 0 20px 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__groups {
+    background-color: #2F3E51;
+    padding: 0 20px;
+  }
+}
+
+.right {
+  float: left;
+  background-color: gray;
+  width: calc(100vw - 300px - 80px);
+  height: calc(100vh - 30px);
+  padding: 30px 40px 0;
+}
