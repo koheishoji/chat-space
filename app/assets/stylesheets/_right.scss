@@ -1,0 +1,98 @@
+.right {
+  float: left;
+  width: calc(100vw - 300px);
+  height: calc(100vh - 30px);
+  padding: 30px 0 0;
+  &__group {
+    @include clearfix;
+    padding: 0 40px;
+    border-bottom: solid;
+    border-color: #EEEEEE;
+    &__user {
+      float: left;
+      &__name {
+        font-size: 20px;
+        color: #333333;
+        margin: 35px 0 15px;
+      }
+      &__members {
+        ul {
+          font-size: 12px;
+          line-height: 12px;
+          color: #999999;
+          li {
+            display: inline;
+          }
+        }
+      }
+    }
+    &__edit {
+      &__button {
+        float: right;
+        height: 40px;
+        margin: 28px 0;
+        padding: 0 20px;
+        border: medium solid #38AEF0;
+        color: #38AEF0;
+        line-height: 40px;
+      }
+    }
+  }
+  &__log {
+    background-color: #AAAAAA;
+    padding: 46px 40px 0;
+    height: calc(100vh - 100px - 90px);
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #434A54;
+      display: inline;
+    }
+    &__date {
+      font-size: 12px;
+      color: #999999;
+      display: inline;
+    }
+    &__body {
+      font-size: 14px;
+      color: #434A54;
+      padding: 0 0 40px;
+    }
+  }
+  &__form {
+    height: 90px;
+    background-color: gray;
+    position: fixed;
+    width: calc(100vw - 300px);
+    bottom: 0;
+    font-size: 16px;
+    &__text {
+      display: block;
+      float: left;
+      height: 50px;
+      width: calc(100% - 80px - 100px - 80px);
+      margin: 20px 0 20px 40px;
+      padding: 0 10px;
+      border: 0;
+    }
+    &__image {
+      display: block;
+      font-size: 20px;
+      float: left;
+      margin: 20px 0;
+      padding:10px;
+      background-color: white;
+      border: 0;
+    }
+    &__submit {
+      display: block;
+      float: right;
+      background-color: #38AEF0;
+      height: 50px;
+      width: 100px;
+      margin: 20px 40px 20px 0;
+      border: 0;
+      color: #FFFFFF;
+    }
+  }
+}
