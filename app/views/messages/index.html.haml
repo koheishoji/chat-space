@@ -12,8 +12,7 @@
         = fa_icon('cog')
   %div.left__groups
     - @groups.each do |group|
-      = link_to "/" do
-        = render partial: "groups", locals: { group: group }
+      = render partial: "groups", locals: { group: group }
 
 %div.right
   %div.right__group
