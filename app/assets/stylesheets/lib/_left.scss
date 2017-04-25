@@ -1,24 +1,27 @@
 .left {
   float: left;
   background-color: #2F3E51;
-  width: 300px;
-  height: calc(100vh - 30px);
+  width: $left__width;
+  height: $left__height;
   padding-top: 30px;
   color: #FFFFFF;
 
   &__user {
     background-color: #253141;
-    height: 16px;
+    height: $left__user__height;
+    width: $left__user__width;
     padding: 42px 20px;
-    width: calc(300px - 40px);
+
     &__name {
       font-size: 16px;
       font-weight: bold;
       float: left;
     }
+
     &__edit {
       font-size: 16px;
       float: right;
+
       a {
         color: #FFFFFF;
       }
@@ -27,15 +30,19 @@
 
   &__groups {
     background-color: #2F3E51;
+
     &__group {
       color: #FFFFFF;
       padding: 0 20px;
+
       &:hover {
-        background-color: red;
+        background-color: #FFFFFF;
       }
+
       &__name {
         padding: 20px 0 5px;
       }
+
       &__message {
         padding: 0 0 20px;
       }

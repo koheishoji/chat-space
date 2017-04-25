@@ -1,8 +1,8 @@
 .notification {
-  width: 100vw;
-  height: 30px;
+  width: $notification__width;
+  height: $notification__height;
   background-color: #38AEF0;
   text-align: center;
-  color: white;
+  color: #FFFFFF;
   position: fixed;
 }
