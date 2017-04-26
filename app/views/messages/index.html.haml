@@ -1,0 +1,41 @@
+%div.notification
+  = @notification
+
+%div.left
+  %div.left__user
+    %div.left__user__name
+      = @user[:name]
+    %div.left__user__edit
+      = link_to '/' do
+        = fa_icon('edit')
+      = link_to '/' do
+        = fa_icon('cog')
+  %div.left__groups
+    - @groups.each do |group|
+      = render partial: "groups", locals: { group: group }
+
+%div.right
+  %div.right__group
+    %div.right__group__user
+      %div.right__group__user__name
+        = @group[:name]
+      %div.right__group__user__members
+        %ul
+          Member:
+          - @group[:menbers].each do |member|
+            %li<
+              = member
+    %div.right__group__edit
+      = link_to '/' do
+        %div.right__group__edit__button
+          Edit
+  %div.right__log
+    - @messages.each do |message|
+      = render partial: "messages", locals: { message: message }
+  %div.right__form
+    = form_for(@chat) do |f|
+      = f.text_field :body, class: "right__form__text", placeholder: "type message"
+      = f.label :image , class: "right__form__image" do
+        = fa_icon "image"
+      = f.file_field :image , style: "display:none;"
+      = f.submit "Send", class: "right__form__submit"
