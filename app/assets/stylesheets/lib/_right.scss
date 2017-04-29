@@ -1,19 +1,27 @@
 .right {
   float: left;
   width: $right__width;
-  height: $rigth__height;
+  height: $right__height;
   padding: 30px 0 0;
+
+  * {
+    box-sizing:border-box;
+    display: block;
+  }
 
   &__group {
     @include clearfix;
-    padding: 0 40px;
     border-bottom: solid;
     border-color: #EEEEEE;
+    height: $right__group__height;
+    width: $right__group__width;
 
     &__user {
       float: left;
+      padding: 0 40px;
 
       &__name {
+        height: inherit;
         font-size: 20px;
         color: #333333;
         margin: 35px 0 15px;
@@ -32,6 +40,7 @@
     }
 
     &__edit {
+      padding: 0 40px;
 
       &__button {
         float: right;
@@ -47,26 +56,31 @@
 
   &__log {
     background-color: #AAAAAA;
-    padding: 46px 40px 0;
     height: $right__log__height;
+    width: $right__log__width;
+    padding-top: 26px;
 
-    &__name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #434A54;
-      display: inline;
-    }
+    &__message {
+      height: $right__log__message__height;
+      padding: 20px 40px;
 
-    &__date {
-      font-size: 12px;
-      color: #999999;
-      display: inline;
-    }
+      &__name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+        display: inline;
+      }
 
-    &__body {
-      font-size: 14px;
-      color: #434A54;
-      padding: 0 0 40px;
+      &__date {
+        font-size: 12px;
+        color: #999999;
+        display: inline;
+      }
+
+      &__body {
+        font-size: 14px;
+        color: #434A54;
+      }
     }
   }
 
@@ -89,13 +103,15 @@
     }
 
     &__image {
+      height: 50px;
       display: block;
       font-size: 20px;
       float: left;
       margin: 20px 0;
-      padding:10px;
+      padding:15px;
       background-color: white;
       border: 0;
+      right: 0;
     }
 
     &__submit {

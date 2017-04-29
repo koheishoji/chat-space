@@ -6,23 +6,33 @@
   padding-top: 30px;
   color: #FFFFFF;
 
+  * {
+    box-sizing:border-box;
+    display: block;
+  }
+
   &__user {
     background-color: #253141;
     height: $left__user__height;
     width: $left__user__width;
-    padding: 42px 20px;
+    border-bottom: solid;
+    border-color: #253141;
 
     &__name {
       font-size: 16px;
+      padding: 42px 20px;
       font-weight: bold;
       float: left;
     }
 
     &__edit {
-      font-size: 16px;
-      float: right;
-
+      @include clearfix;
+      padding-right: 20px;
       a {
+        width: 16px;
+        float: right;
+        font-size: 16px;
+        padding: 42px 0;
         color: #FFFFFF;
       }
     }
@@ -30,21 +40,23 @@
 
   &__groups {
     background-color: #2F3E51;
+    height: $left__groups__height;
+    width: $left__groups__width;
 
     &__group {
       color: #FFFFFF;
-      padding: 0 20px;
+      padding: 20px 20px;
 
       &:hover {
         background-color: #FFFFFF;
       }
 
       &__name {
-        padding: 20px 0 5px;
+        font-size: 15px;
       }
 
       &__message {
-        padding: 0 0 20px;
+        font-size: 11px;
       }
     }
   }
