@@ -6,10 +6,10 @@
     %div.left__user__name
       = @user[:name]
     %div.left__user__edit
+      = link_to edit_user_registration_path do
+        = fa_icon('cog')
       = link_to '/' do
         = fa_icon('edit')
-      = link_to '/' do
-        = fa_icon('cog')
   %div.left__groups
     - @groups.each do |group|
       = render partial: "groups", locals: { group: group }
