@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def edit
-    @user = current_user
+    if current_user.id == params[:id].to_i
+      @user = current_user
+    else
+      redirect_to controller: :messages, action: :index
+    end
   end
 
   def update
