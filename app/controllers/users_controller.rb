@@ -9,8 +9,11 @@ class UsersController < ApplicationController
 
   def update
     user = current_user
-    user.update update_user_params
-    redirect_to controller: :messages, action: :index
+    if user.update update_user_params
+      redirect_to controller: :messages, action: :index
+    else
+      render 'edit'
+    end
   end
 
   protected
