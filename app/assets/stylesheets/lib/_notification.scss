@@ -1,9 +1,14 @@
 .notification {
   width: 100vw;
   height: 30px;
-  background-color: #38AEF0;
   text-align: center;
   color: #FFFFFF;
   position: fixed;
   top: 0;
+  &__notice {
+    background-color: #38AEF0;
+  }
+  &__alert {
+    background-color: red;
+  }
 }
