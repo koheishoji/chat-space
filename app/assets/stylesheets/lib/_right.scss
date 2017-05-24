@@ -1,8 +1,7 @@
 .right {
   float: left;
-  width: $right__width;
-  height: $right__height;
-  padding: 30px 0 0;
+  width: calc(100vw - 300px);
+  height: 100vh;
 
   * {
     box-sizing:border-box;
@@ -13,8 +12,7 @@
     @include clearfix;
     border-bottom: solid;
     border-color: #EEEEEE;
-    height: $right__group__height;
-    width: $right__group__width;
+    height: 100px;
 
     &__user {
       float: left;
@@ -44,7 +42,7 @@
 
       &__button {
         float: right;
-        height: $right__group__edit__button__height;
+        height: 40px;
         margin: 28px 0;
         padding: 0 20px;
         border: medium solid #38AEF0;
@@ -56,12 +54,11 @@
 
   &__log {
     background-color: #AAAAAA;
-    height: $right__log__height;
-    width: $right__log__width;
+    height: calc(100vh - 100px - 90px);
     padding-top: 26px;
 
     &__message {
-      height: $right__log__message__height;
+      height: 80px;
       padding: 20px 40px;
 
       &__name {
@@ -85,15 +82,12 @@
   }
 
   &__form {
-    height: $right__form__height;
-    width: $right__form__width;
+    height: 90px;
     background-color: gray;
-    position: fixed;
-    bottom: 0;
     font-size: 16px;
 
     &__text {
-      width: $right__form__text__width;
+      width: calc(100vw - 300px - 80px - 100px - 80px);
       display: block;
       float: left;
       height: 50px;
@@ -115,8 +109,8 @@
     }
 
     &__submit {
-      height: $right__form__submit__height;
-      width: $right__form__submit__width;
+      height: 50px;
+      width: 100px;
       margin: 20px 40px 20px 0;
       display: block;
       float: right;
