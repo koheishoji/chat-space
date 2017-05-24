@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   def index
-    @notification = "create chat group"
     @user = current_user
     @groups = [{name: "god", message: "god of god"},
                {name: "aaaaaaaaa", message: "aaaaaaa"},

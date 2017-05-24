@@ -7,4 +7,12 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if flash[:notice]
+      %div.notification
+        %div.notification__notice
+          = flash[:notice]
+    - if flash[:alert]
+      %div.notification
+        %div.notification__alert
+          = flash[:alert]
     = yield
