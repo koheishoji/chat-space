@@ -8,8 +8,7 @@
       = link_to new_group_path do
         = fa_icon 'edit'
   %div.left__groups
-    - @groups.each do |group|
-      = render partial: "groups", locals: { group: group }
+    = render @groups
 
 %div.right
   %div.right__group

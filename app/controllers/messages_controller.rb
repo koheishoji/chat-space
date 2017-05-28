@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @user = current_user
-    @groups = GroupsUser.where(user_id: current_user.id)
+    @groups = current_user.groups
     @group = {name: "sample", menbers: ["seo", "neko"]}
     @messages = [{name: "seo", date: "2016/09/21 06:16:55", body: "Hello world!"},
       {name: "neko", date: "2016/09/22 06:16:55", body: "Good bye world!"},
