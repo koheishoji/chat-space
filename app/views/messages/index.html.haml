@@ -1,11 +1,11 @@
 %div.left
   %div.left__user
     %div.left__user__name
-      = @user[:name]
+      = current_user.name
     %div.left__user__edit
       = link_to edit_user_path(current_user.id) do
         = fa_icon 'cog'
-      = link_to '/' do
+      = link_to new_group_path do
         = fa_icon 'edit'
   %div.left__groups
     - @groups.each do |group|
