@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to :root, notice: "グループが作成されました"
     else
-      render action: :new
+      render :new
     end
   end
 
