@@ -22,7 +22,7 @@
             %li<
               = user.name
     %div.right__group__edit
-      = link_to edit_group_path(5) do
+      = link_to edit_group_path(params[:group_id]) do
         %div.right__group__edit__button
           Edit
   %div.right__log
