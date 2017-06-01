@@ -1,0 +1,44 @@
+= form_for @group do |f|
+  - if @group.errors.any?
+    .group-form__errors
+      %h2
+        = @group.errors.count
+        件のエラーが発生しました。
+        %ul
+          - @group.errors.full_messages.each do |msg|
+            %li
+              = msg
+  .group-form__field.clearfix
+    .group-form__field--left
+      = f.label :name, "グループ名", class: "group-form__label"
+    .group-form__field--right
+      =f.text_field :name, placeholder: "グループ名を入力してください", class: "group-form__input"
+  .group-form__field.clearfix
+    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+    /
+      <div class='group-form__field--left'>
+      <label class="group-form__label" for="chat_group_チャットメンバーを追加">チャットメンバーを追加</label>
+      </div>
+      <div class='group-form__field--right'>
+      <div class='group-form__search clearfix'>
+      <input class='group-form__input' id='user-search-field' placeholder='追加したいユーザー名を入力してください' type='text'>
+      </div>
+      <div id='user-search-result'></div>
+      </div>
+  .group-form__field.clearfix
+    .group-form__field--left
+      = f.label "チャットメンバー", class: "group-form__label"
+    .group-form__field--right
+      = f.collection_check_boxes(:user_ids, User.all, :id, :name)
+      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+      /
+        <div id='group-users'>
+        <div class='group-user clearfix' id='group-user-22'>
+        <input name='chat_group[user_ids][]' type='hidden' value='22'>
+        <p class='group-user__name'>seo_kyohei</p>
+        </div>
+        </div>
+  .group-form__field.clearfix
+    .group-form__field--left
+    .group-form__field--right
+      = f.submit "Save",class: "group-form__action-btn"
