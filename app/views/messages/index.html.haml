@@ -1,18 +1,18 @@
-= render "groups/group"
+= render partial: "groups/left", locals: {groups: @groups}
 
 %div.right
   %div.right__group
     %div.right__group__user
       %div.right__group__user__name
-        = @group.name
+        = @messages_group.name
       %div.right__group__user__members
         %ul
           Member:
-          - @group.users.each do |user|
+          - @messages_group.users.each do |user|
             %li<
               = user.name
     %div.right__group__edit
-      = link_to edit_group_path(params[:group_id]) do
+      = link_to edit_group_path(@messages_group) do
         %div.right__group__edit__button
           Edit
   %div.right__log
