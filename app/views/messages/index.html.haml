@@ -1,24 +1,24 @@
 = render partial: "groups/left", locals: {groups: @groups}
 
-%div.right
-  %div.right__group
-    %div.right__group__user
-      %div.right__group__user__name
+.right
+  .right__group
+    .right__group__user
+      .right__group__user__name
         = @messages_group.name
-      %div.right__group__user__members
+      .right__group__user__members
         %ul
           Member:
           - @messages_group.users.each do |user|
             %li<
               = user.name
-    %div.right__group__edit
+    .right__group__edit
       = link_to edit_group_path(@messages_group) do
-        %div.right__group__edit__button
+        .right__group__edit__button
           Edit
-  %div.right__log
+  .right__log
     - @messages.each do |message|
       = render partial: "messages", locals: { message: message }
-  %div.right__form
+  .right__form
     = form_for(@chat) do |f|
       = f.text_field :body, class: "right__form__text", placeholder: "type message"
       = f.label :image , class: "right__form__image" do
