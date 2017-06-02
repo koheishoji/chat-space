@@ -8,8 +8,8 @@
       = link_to new_group_path do
         = fa_icon 'edit'
   %div.left__groups
-    - current_user.groups.each do |group|
-      = link_to group_messages_path(group.id) do
+    - groups.each do |group|
+      = link_to group_messages_path(group) do
         %div.left__groups__group
           %div.left__groups__group__name
             = group.name

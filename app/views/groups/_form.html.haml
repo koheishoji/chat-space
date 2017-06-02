@@ -1,11 +1,11 @@
-= form_for @group do |f|
-  - if @group.errors.any?
+= form_for group do |f|
+  - if group.errors.any?
     .group-form__errors
       %h2
-        = @group.errors.count
+        = group.errors.count
         件のエラーが発生しました。
         %ul
-          - @group.errors.full_messages.each do |msg|
+          - group.errors.full_messages.each do |msg|
             %li
               = msg
   .group-form__field.clearfix
