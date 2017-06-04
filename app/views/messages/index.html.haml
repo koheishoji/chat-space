@@ -4,15 +4,15 @@
   .right__group
     .right__group__user
       .right__group__user__name
-        = @messages_group.name
+        = @group.name
       .right__group__user__members
         %ul
           Member:
-          - @messages_group.users.each do |user|
+          - @group.users.each do |user|
             %li<
               = user.name
     .right__group__edit
-      = link_to edit_group_path(@messages_group) do
+      = link_to edit_group_path(@group) do
         .right__group__edit__button
           Edit
   .right__log
