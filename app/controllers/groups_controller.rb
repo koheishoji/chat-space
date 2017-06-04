@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 
+  before_action :set_group, only: [:edit, :update]
+
   def index
     @groups = current_user.groups
   end
@@ -18,11 +20,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    set_group
   end
 
   def update
-    set_group
     if @group.update(group_params)
       redirect_to group_messages_path(params[:id]), notice: "グループが変更されました"
     else
