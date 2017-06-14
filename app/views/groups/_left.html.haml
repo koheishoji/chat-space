@@ -15,8 +15,8 @@
             = group.name
           .left__groups__group__message
             - message = group.messages.order("created_at DESC").first
-            - if !message.nil?
-              - if !message.body.blank?
+            - if message
+              - unless message.body.blank?
                 = message.body
               - else
                 = "画像が送信されました"
