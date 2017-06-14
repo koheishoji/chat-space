@@ -14,4 +14,11 @@
           .left__groups__group__name
             = group.name
           .left__groups__group__message
-            まだメッセージはありません
+            - message = group.messages.order("created_at DESC").first
+            - if !message.nil?
+              - if !message.body.blank?
+                = message.body
+              - else
+                = "画像が送信されました"
+            - else
+              = "まだメッセージはありません"
