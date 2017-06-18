@@ -40,6 +40,7 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rake', '< 11'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,6 +62,7 @@ end
 
 group :test do
   gem 'faker'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
