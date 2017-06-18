@@ -2,9 +2,22 @@ class MessagesController < ApplicationController
   def index
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
-    @messages = [{name: "seo", date: "2016/09/21 06:16:55", body: "Hello world!"},
-      {name: "neko", date: "2016/09/22 06:16:55", body: "Good bye world!"},
-      {name: "neko", date: "2016/09/23 06:16:55", body: "See you later!"}]
-    @chat = ""
+    @messages = Message.where(group_id: params[:group_id])
+    @message = Message.new
   end
+
+  def create
+    @message = Message.new(message_params)
+    if @message.save
+      redirect_to group_messages_path(params[:group_id]), notice:  "メッセージが送信されました"
+    else
+      redirect_to group_messages_path(params[:group_id]), alert: "メッセージを入力してください"
+    end
+  end
+
+  private
+
+    def message_params
+      params.require(:message).permit(:body, :image).merge(user_id: current_user.id, group_id: params[:group_id])
+    end
 end

@@ -19,7 +19,7 @@
     - @messages.each do |message|
       = render 'messages', message: message
   .right__form
-    = form_for(@chat) do |f|
+    = form_for [@group, @message] do |f|
       = f.text_field :body, class: "right__form__text", placeholder: "type message"
       = f.label :image , class: "right__form__image" do
         = fa_icon "image"

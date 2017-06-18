@@ -56,9 +56,10 @@
     background-color: #AAAAAA;
     height: calc(100vh - 100px - 90px);
     padding-top: 26px;
+    overflow: auto;
 
     &__message {
-      height: 80px;
+      min-height: 80px;
       padding: 20px 40px;
 
       &__name {

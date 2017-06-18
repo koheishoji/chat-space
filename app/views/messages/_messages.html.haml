@@ -1,9 +1,10 @@
 .right__log__message
   .right__log__message__name
-    = message[:name]
+    = message.user.name
 
   .right__log__message__date
-    = message[:date]
+    = message.created_at
 
   .right__log__message__body
-    = message[:body]
+    = message.body
+    = image_tag message.image_url if message.image?
