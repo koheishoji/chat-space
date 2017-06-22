@@ -50,6 +50,10 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
+  config.include ::Rails::Controller::Testing::TestProcess, type: type
+  config.include ::Rails::Controller::Testing::TemplateAssertions, type: type
+  config.include ::Rails::Controller::Testing::Integration, type: type
+
   config.before(:suite) do
     DatabaseCleaner[:active_record].strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
