@@ -6,6 +6,7 @@ FactoryGirl.define do
     group_id    Faker::Number.number(1)
     user_id     Faker::Number.number(1)
     created_at  Faker::Time.between(2.days.ago, Date.today, :all)
+
   end
 
 end
