@@ -3,6 +3,10 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+
+# Use MessagesController testing with devise
+require 'devise'
+require File.expand_path("spec/support/controller_macros.rb")
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -50,9 +54,16 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
-  config.include ::Rails::Controller::Testing::TestProcess, type: type
-  config.include ::Rails::Controller::Testing::TemplateAssertions, type: type
-  config.include ::Rails::Controller::Testing::Integration, type: type
+  # rails-controller-testing
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, type: type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, type: type
+    config.include ::Rails::Controller::Testing::Integration, type: type
+  end
+
+  # devise
+  config.include Devise::TestHelpers, type: :controller
+  config.include ControllerMacros, type: :controller
 
   config.before(:suite) do
     DatabaseCleaner[:active_record].strategy = :transaction
