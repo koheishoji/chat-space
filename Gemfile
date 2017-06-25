@@ -40,7 +40,6 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'rake', '< 11'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +47,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -61,7 +61,6 @@ group :development do
 end
 
 group :test do
-  gem 'faker'
   gem 'database_cleaner'
   gem 'rails-controller-testing'
 end
