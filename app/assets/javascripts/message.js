@@ -41,7 +41,6 @@ $(function() {
       processData: false,
       contentType: false
     }).done(function(data){
-      console.log(data);
       var html = buildHTML(data);
       $('.right__log').append(html);
       $('.right__log').animate({scrollTop: $('.right__log')[0].scrollHeight});
