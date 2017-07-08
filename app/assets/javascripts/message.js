@@ -14,7 +14,7 @@ $(function() {
   }
 
   function buildHTML(message) {
-    var html = `<div class="right__log__message">
+    var html = `<div class="right__log__message" message_id="${ message.id }">
                   <div class="right__log__message__name">
                     ${ message.user_name }
                   </div>
@@ -50,4 +50,33 @@ $(function() {
     })
     return false;
   });
+
+  // automatic update
+  setInterval(function(){
+    var href = window.location.href;
+
+    if(href.match(/messages/)){
+
+      var last_message_id = $('.right__log__message').last().attr("message_id");
+      console.log(last_message_id);
+
+      $.ajax({
+        url: href + '/auto',
+        type: 'POST',
+        data: { last_id: last_message_id },
+        dataType: 'json'
+      }).done(function(messages){
+        messages.forEach(function(message){
+          if(message.id > last_message_id){
+            var html = buildHTML(message);
+            $('.right__log').append(html);
+          }
+        });
+      }).fail(function(){
+        alert('更新してください');
+      });
+    }
+
+  }, 5000);
+
 });
