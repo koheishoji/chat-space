@@ -13,31 +13,27 @@
       = f.label :name, "グループ名", class: "group-form__label"
     .group-form__field--right
       =f.text_field :name, placeholder: "グループ名を入力してください", class: "group-form__input"
+
   .group-form__field.clearfix
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-    /
-      <div class='group-form__field--left'>
-      <label class="group-form__label" for="chat_group_チャットメンバーを追加">チャットメンバーを追加</label>
-      </div>
-      <div class='group-form__field--right'>
-      <div class='group-form__search clearfix'>
-      <input class='group-form__input' id='user-search-field' placeholder='追加したいユーザー名を入力してください' type='text'>
-      </div>
-      <div id='user-search-result'></div>
-      </div>
+    .group-form__field--left
+      = f.label "チャットメンバーを追加", class: "group-form__label"
+    .group-form__field--right
+      .group-form__search.clearfix
+        %input#user-search-field.group-form__input{ placeholder: '追加したいユーザー名を入力してください', type: 'text' }
+      #user-search-result
+
   .group-form__field.clearfix
     .group-form__field--left
       = f.label "チャットメンバー", class: "group-form__label"
     .group-form__field--right
-      = f.collection_check_boxes(:user_ids, User.all, :id, :name)
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-      /
-        <div id='group-users'>
-        <div class='group-user clearfix' id='group-user-22'>
-        <input name='chat_group[user_ids][]' type='hidden' value='22'>
-        <p class='group-user__name'>seo_kyohei</p>
-        </div>
-        </div>
+      #group-users
+        - group.users.each do |user|
+          .group-user.clearfix.js-chat-member{ id: "chat-group-user-#{user.id}" }
+            %input{ name: 'group[user_ids][]', type: 'hidden', value: "#{user.id}" }
+            %p.group-user__name
+              = user.name
+            %a.user-search-remove.group-user__btn.group-user__btn--remove.js-remove-btn 削除
+
   .group-form__field.clearfix
     .group-form__field--left
     .group-form__field--right

@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    render formats: 'json'
+  end
+
   def edit
     if current_user.id == params[:id].to_i
       @user = current_user
@@ -16,7 +22,8 @@ class UsersController < ApplicationController
   end
 
   protected
-  def update_user_params
-    params.require(:user).permit(:name)
-  end
+
+    def update_user_params
+      params.require(:user).permit(:name)
+    end
 end
