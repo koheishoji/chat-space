@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'groups#index'
   resources :users, only: [:index, :edit, :update]
   resources :groups, only: [:index, :new, :create, :edit, :update] do
-    resources :messages, only: [:index, :create]
+    resources :messages, only: [:index, :create, :auto]
+    post 'messages/auto', to: 'messages#auto'
   end
-  post '/groups/:group_id/messages/auto', to: 'messages#auto'
 end
