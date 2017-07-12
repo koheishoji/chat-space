@@ -57,7 +57,6 @@ $(function() {
 
     if(href.match(/messages/)){
       var last_message_id = $('.right__log__message').last().attr("message_id");
-      console.log(last_message_id);
 
       $.ajax({
         url: href + '/auto',
