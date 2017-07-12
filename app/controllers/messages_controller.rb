@@ -20,7 +20,6 @@ class MessagesController < ApplicationController
 
   def auto
     @messages = Message.where("id>=?", params[:last_id]).where(group_id: params[:group_id])
-    render 'auto', formats: 'json', handlers: 'jbuilder'
   end
 
   private
