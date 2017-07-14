@@ -18,6 +18,10 @@ class MessagesController < ApplicationController
     end
   end
 
+  def auto
+    @messages = Message.where("id>=?", params[:last_id]).where(group_id: params[:group_id])
+  end
+
   private
 
     def message_params
