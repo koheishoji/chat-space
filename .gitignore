@@ -18,6 +18,3 @@
 
 # Ignore uploads message image
 /public/uploads/*
-
-# Ignore uploads message image from test
-/spec/files/*
