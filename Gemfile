@@ -41,6 +41,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'execjs'
+gem 'therubyracer'
 
 group :production do
   gem 'unicorn'
