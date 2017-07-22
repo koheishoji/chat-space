@@ -40,6 +40,7 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'execjs'
 
 group :production do
   gem 'unicorn'
