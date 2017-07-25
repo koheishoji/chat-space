@@ -42,6 +42,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'execjs'
 gem 'therubyracer'
+gem 'sprockets-es6'
 
 group :production do
   gem 'unicorn'
