@@ -44,6 +44,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'sprockets'
 gem 'sprockets-es6'
+gem 'fog'
 
 group :production do
   gem 'unicorn'
